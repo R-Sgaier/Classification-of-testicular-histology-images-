@@ -3,7 +3,6 @@ import os
 from PIL import Image
 import shutil
 from img2vec_pytorch import Img2Vec
-import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
@@ -108,7 +107,6 @@ for j, dir_ in enumerate([train_dir, test_dir]):
 
 model = RandomForestClassifier(random_state=0)
 model.fit(data['training_data'], data['training_labels'])
-
 pred_p = model.predict(data['testing_data'])
 score = accuracy_score(pred_p, data['testing_labels'])
 
